@@ -2,188 +2,258 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advik Mittal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advik Mittal</title>
 
-  <link rel="shortcut icon" href="./assets/images/image.png" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+}
+
+/* LAYOUT */
+main {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: #010409;
+  padding: 20px;
+  border-right: 1px solid #00ff9c33;
+}
+
+.name {
+  color: #00ff9c;
+}
+
+.title {
+  font-size: 14px;
+  color: #6e7681;
+}
+
+.sidebar a {
+  color: #00ff9c;
+  text-decoration: none;
+}
+
+/* MAIN */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* NAVBAR */
+.navbar-list {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.navbar-link {
+  background: transparent;
+  border: 1px solid #00ff9c;
+  color: #00ff9c;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.navbar-link.active,
+.navbar-link:hover {
+  background: #00ff9c;
+  color: #0d1117;
+}
+
+/* PAGES */
+article {
+  display: none;
+}
+
+article.active {
+  display: block;
+}
+
+/* BLOG */
+.blog-post {
+  background: #010409;
+  border: 1px solid #00ff9c33;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #00ff9c22;
+}
+
+.blog-title {
+  color: #00ff9c;
+  font-family: monospace;
+}
+
+.blog-date {
+  font-size: 12px;
+  color: #6e7681;
+}
+
+.blog-full {
+  display: none;
+}
+
+.blog-full.active {
+  display: block;
+}
+
+/* BUTTON */
+.read-more-btn {
+  margin-top: 10px;
+  border: 1px solid #00ff9c;
+  background: transparent;
+  color: #00ff9c;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.read-more-btn:hover {
+  background: #00ff9c;
+  color: #0d1117;
+}
+
+/* CODE BLOCK */
+.code-block {
+  background: #000;
+  color: #00ff9c;
+  padding: 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+/* CONTACT FORM */
+input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  background: #010409;
+  border: 1px solid #00ff9c33;
+  color: white;
+}
+
+button[type="submit"] {
+  background: #00ff9c;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+</style>
 </head>
 
 <body>
 
 <main>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar" data-sidebar>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2 class="name">Advik Mittal</h2>
+  <p class="title">Cybersecurity • Developer</p>
 
-    <div class="sidebar-info">
-      <figure class="avatar-box">
-        <img src="./assets/images/my-avatar.png" alt="Advik Mittal" width="80">
-      </figure>
+  <p>Email: <a href="mailto:hackerbro838@gmail.com">hackerbro838@gmail.com</a></p>
+  <p>Phone: <a href="tel:+918619754439">+91 8619754439</a></p>
+</aside>
 
-      <div class="info-content">
-        <h1 class="name">Advik Mittal</h1>
-        <p class="title">Cybersecurity enthusiast, Web developer</p>
-      </div>
+<!-- MAIN -->
+<div class="main-content">
 
-      <button class="info_more-btn" data-sidebar-btn>
-        <span>Show Contacts</span>
-        <ion-icon name="chevron-down"></ion-icon>
-      </button>
-    </div>
+<!-- NAVBAR -->
+<div class="navbar-list">
+  <button class="navbar-link active" data-page="about">About</button>
+  <button class="navbar-link" data-page="resume">Resume</button>
+  <button class="navbar-link" data-page="blog">Blog</button>
+  <button class="navbar-link" data-page="contact">Contact</button>
+</div>
 
-    <div class="sidebar-info_more">
+<!-- ABOUT -->
+<article class="active" id="about">
+  <h2>About Me</h2>
+  <p>
+    I am Advik Mittal (neurocipher), an ethical hacker specializing in web pentesting and bug hunting.
+    I am also a JEE aspirant (2028).
+  </p>
+</article>
 
-      <div class="separator"></div>
+<!-- RESUME -->
+<article id="resume">
+  <h2>Resume</h2>
+  <p>Education: Central Academy, JNV Mavli, Allen</p>
+  <p>Skills: Web Pentesting, Development, Music</p>
+</article>
 
-      <ul class="contacts-list">
-        <li class="contact-item">
-          <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
-          <div class="contact-info">
-            <p class="contact-title">Email</p>
-            <a href="mailto:hackerbro838@gmail.com">hackerbro838@gmail.com</a>
-          </div>
-        </li>
+<!-- BLOG -->
+<article id="blog">
+  <h2>Blog</h2>
 
-        <li class="contact-item">
-          <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
-          <div class="contact-info">
-            <p class="contact-title">Phone</p>
-            <a href="tel:+918619754439">+91 8619754439</a>
-          </div>
-        </li>
+  <div class="blog-post">
+    <h3 class="blog-title">My Journey into Cybersecurity</h3>
+    <p class="blog-date">April 2026</p>
 
-        <li class="contact-item">
-          <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
-          <div class="contact-info">
-            <p class="contact-title">Birthday</p>
-            <time datetime="2011-01-28">January 28, 2011</time>
-          </div>
-        </li>
+    <p>I started with curiosity...</p>
 
-        <li class="contact-item">
-          <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
-          <div class="contact-info">
-            <p class="contact-title">Location</p>
-            <address>Bhuwana, Udaipur, Rajasthan, India</address>
-          </div>
-        </li>
-      </ul>
+    <div class="blog-full">
+      <p>Then I explored bug hunting and HTB machines.</p>
 
-      <div class="separator"></div>
-
-      <ul class="social-list">
-        <li><a href="https://app.hackthebox.com/profile/2221200"><ion-icon name="bug"></ion-icon></a></li>
-        <li><a href="https://x.com/advikmittal7"><ion-icon name="logo-twitter"></ion-icon></a></li>
-        <li><a href="https://www.instagram.com/pvt_advik.mittal"><ion-icon name="logo-instagram"></ion-icon></a></li>
-        <li><a href="https://www.reddit.com/user/Electrical_Trash_847/"><ion-icon name="logo-reddit"></ion-icon></a></li>
-        <li><a href="https://discord.gg/atdWf8Hpxs"><ion-icon name="logo-discord"></ion-icon></a></li>
-      </ul>
-
-    </div>
-  </aside>
-
-  <!-- MAIN CONTENT -->
-  <div class="main-content">
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <ul class="navbar-list">
-        <li><button class="navbar-link active" data-nav-link>About</button></li>
-        <li><button class="navbar-link" data-nav-link>Resume</button></li>
-        <li><button class="navbar-link" data-nav-link>Blog</button></li>
-        <li><button class="navbar-link" data-nav-link>Contact</button></li>
-      </ul>
-    </nav>
-
-    <!-- ABOUT -->
-    <article class="about active" data-page="about">
-      <h2 class="h2">About Me</h2>
-      <p>
-        I am Advik Mittal (neurocipher), an ethical hacker specializing in web pentesting and bug hunting.
-        I am currently a Class 11 student and a JEE aspirant (2028).
-      </p>
-    </article>
-
-    <!-- RESUME -->
-    <article class="resume" data-page="resume">
-      <h2 class="h2">Resume</h2>
-
-      <h3>Education</h3>
-      <ul>
-        <li>Central Academy, Udaipur</li>
-        <li>JNV Mavli (2021)</li>
-        <li>Allen Career Institute (2026–Present)</li>
-      </ul>
-
-      <h3>Skills</h3>
-      <ul>
-        <li>Web Pentesting - 80%</li>
-        <li>Academics - 94.75%</li>
-        <li>Music - 90%</li>
-      </ul>
-    </article>
-
-    <!-- BLOG -->
-    <article class="blog" data-page="blog">
-      <h2 class="h2">Blog</h2>
-
-      <div class="blog-post">
-
-        <h3 class="blog-title">My Journey into Cybersecurity</h3>
-        <p class="blog-date">April 2026</p>
-
-        <p class="blog-preview">
-          I started my journey into cybersecurity out of curiosity...
-        </p>
-
-        <div class="blog-full">
-          <p>
-            I started my journey into cybersecurity out of curiosity. It evolved into bug hunting and HTB.
-          </p>
-
-          <pre class="code-block"><code>
+      <pre class="code-block"><code>
 nmap -sC -sV target.com
-          </code></pre>
+      </code></pre>
 
-          <p>
-            Over time, I learned vulnerabilities and responsible disclosure.
-          </p>
-        </div>
+      <p>I learned responsible disclosure and exploitation.</p>
+    </div>
 
-        <button class="read-more-btn">Read More</button>
-
-      </div>
-
-    </article>
-
-    <!-- CONTACT -->
-    <article class="contact" data-page="contact">
-      <h2 class="h2">Contact</h2>
-
-      <form>
-        <input type="text" placeholder="Full name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </article>
-
+    <button class="read-more-btn">Read More</button>
   </div>
+
+</article>
+
+<!-- CONTACT -->
+<article id="contact">
+  <h2>Contact</h2>
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</article>
+
+</div>
 
 </main>
 
-<!-- JS -->
-<script src="./assets/js/script.js"></script>
-
 <script>
+
+/* PAGE SWITCHING */
+const buttons = document.querySelectorAll(".navbar-link");
+const pages = document.querySelectorAll("article");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    pages.forEach(p => p.classList.remove("active"));
+
+    btn.classList.add("active");
+    document.getElementById(btn.dataset.page).classList.add("active");
+  });
+});
+
+/* READ MORE */
 document.querySelectorAll(".read-more-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const full = btn.previousElementSibling;
@@ -191,10 +261,8 @@ document.querySelectorAll(".read-more-btn").forEach(btn => {
     btn.textContent = full.classList.contains("active") ? "Read Less" : "Read More";
   });
 });
-</script>
 
-<!-- ICONS -->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</script>
 
 </body>
 </html>
